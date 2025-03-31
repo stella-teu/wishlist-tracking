@@ -24,13 +24,13 @@ app.use(
 
 app.get("/", (req,res) => {
     res.render("index.ejs", {
-        user: req.session.user
+        user: req.session.user,
     });
 });
 
-// app.use(passUserToView);
+app.use(passUserToView);
 app.use("/auth", authController);
-// app.use(isSignedIn);
+app.use(isSignedIn);
 // app.use("/users/:userId/wishlist", )
 
 mongoose.connection.on("connected", () => {
@@ -39,3 +39,4 @@ mongoose.connection.on("connected", () => {
         console.log("Listening on port "+ port);
     })
 })
+
