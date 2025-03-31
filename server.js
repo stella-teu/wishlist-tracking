@@ -4,6 +4,9 @@ import mongoose from "mongoose";
 import methodOverride from "method-override";
 import session from "express-session";
 import morgan from "morgan";
+import { isSignedIn } from "./middleware/is-signed-in.js";
+import { passUserToView } from "./middleware/pass-user-to-view.js";
+import authController from "./controllers/auth.js"
 
 const app = express();
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -24,6 +27,11 @@ app.get("/", (req,res) => {
         user: req.session.user
     });
 });
+
+// app.use(passUserToView);
+app.use("/auth", authController);
+// app.use(isSignedIn);
+// app.use("/users/:userId/wishlist", )
 
 mongoose.connection.on("connected", () => {
     console.log("Connected to MongoDB");
