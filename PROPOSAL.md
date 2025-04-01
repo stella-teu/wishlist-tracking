@@ -24,8 +24,7 @@ My project will allow a user to create a wishlist and be able to edit, delete an
 ## Routes
 | Action | Route | HTTP Verb |
 | ------ | ----- | --------- |
-| Sign up | 'auth/sign-up' | GET
-| Make account | 'auth/sign-up' | POST
+| Sign up | 'auth/sign-up' | GET & POST
 | Sign in | 'auth/sign-in' | GET & POST
 | Index | 'users/:userId/wishlist' | GET
 | New |'users/:userId/wishlist/new' | GET

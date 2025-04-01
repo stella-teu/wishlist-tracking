@@ -7,6 +7,7 @@ import morgan from "morgan";
 import { isSignedIn } from "./middleware/is-signed-in.js";
 import { passUserToView } from "./middleware/pass-user-to-view.js";
 import authController from "./controllers/auth.js"
+import wishlistController from "./controllers/wishlist.js";
 
 const app = express();
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -31,7 +32,7 @@ app.get("/", (req,res) => {
 app.use(passUserToView);
 app.use("/auth", authController);
 app.use(isSignedIn);
-// app.use("/users/:userId/wishlist", )
+app.use("/users/:userId/wishlist", wishlistController);
 
 mongoose.connection.on("connected", () => {
     console.log("Connected to MongoDB");

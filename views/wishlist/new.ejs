@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add an Item</title>
+</head>
+<body>
+    <h1>Add an item to your wishlist</h1>
+    <form action="/users/<%= user._id %>/wishlist" method="POST">
+        <label for="name">Name: </label>
+        <input type="name" name="name" id="name" required />
+        <label for="price">Price: </label>
+        <input type="price" name="price" id="price" />
+        <label for="description">Description: </label>
+        <textarea name="description" id="description"></textarea>
+        <label for="link">Link: </label>
+        <input type="link" name="link" id="link" />
+        <button type="submit">Add item</button>
+    </form>
+</body>
+</html>

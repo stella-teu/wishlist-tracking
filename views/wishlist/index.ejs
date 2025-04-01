@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist</title>
+</head>
+<body>
+    <h1>Your Wishlist</h1>
+    <ul>
+    <% items.forEach(item => { %>
+        <li><p><%= item.name %></p></li>
+    <% }); %>
+</ul>
+    <a href="/users/<%= user._id %>/wishlist/new">Add Item</a>
+</body>
+</html>
