@@ -29,4 +29,15 @@ router.post("/", async (req, res) => {
     }
 })
 
+router.get("/:itemId", async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const item = await currentUser.wishlist.id(req.params.itemId);
+        res.render("wishlist/show.ejs", { item: item });
+    } catch (error) {
+        console.log(error);
+        res.redirect("/")
+    }
+})
+
 export default router;

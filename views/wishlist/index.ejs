@@ -9,7 +9,7 @@
     <h1>Your Wishlist</h1>
     <ul>
     <% items.forEach(item => { %>
-        <li><p><%= item.name %></p></li>
+        <li><a href="/users/<%= user._id %>/wishlist/<%= item._id %>"><%= item.name %></a></li>
     <% }); %>
 </ul>
     <a href="/users/<%= user._id %>/wishlist/new">Add Item</a>
