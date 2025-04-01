@@ -51,4 +51,17 @@ router.get("/:itemId/edit", async (req, res) => {
     }
 })
 
+router.put("/:itemId", async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const item = currentUser.wishlist.id(req.params.itemId);
+        item.set(req.body);
+        await currentUser.save();
+        res.redirect("/users/"+req.session.user._id+"/wishlist");
+    } catch (error){
+        console.log(error);
+        res.redirect("/");
+    }
+})
+
 export default router;

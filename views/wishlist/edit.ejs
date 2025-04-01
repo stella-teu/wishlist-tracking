@@ -11,7 +11,7 @@
         <a href="/auth/sign-out">Sign Out</a>
     </nav>
     <h1>Edit <%= item.name %></h1>
-    <form action="" method="">
+    <form action="/users/<%= user._id %>/wishlist/<%= item._id %>?_method=PUT" method="POST">
         <label for="name">Name: </label>
         <input type="name" name="name" id="name" value="<%= item.name %>" required />
         <label for="price">Price: </label>
