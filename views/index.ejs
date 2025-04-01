@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Home Page</title>
 </head>
 <body>
+    <div class="home">
     <% if (user){ %>
         <h1>Welcome to the Wishlist Tracker, <%= user.username %></h1>
-        <a href="users/<%= user._id %>/wishlist">View wishlist</a>
-        <a href="/community">Community</a>
-        <a href="/auth/sign-out">Sign Out</a>
+        <button><a href="users/<%= user._id %>/wishlist">View wishlist</a></button>
+        <button><a href="/community">Community</a></button>
+        <button><a href="/auth/sign-out">Sign Out</a></button>
     <% } else { %>
         <h1>Welcome to the Wishlist Tracker, guest.</h1>
-    <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Sign in</a>
+    <button><a href="/auth/sign-up">Sign up</a> </button>
+    <button id="sign-in"><a href="/auth/sign-in">Sign in</a> </button>
     <% } %>
+</div>
 </body>
 </html>

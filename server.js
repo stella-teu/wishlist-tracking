@@ -9,13 +9,17 @@ import { passUserToView } from "./middleware/pass-user-to-view.js";
 import authController from "./controllers/auth.js"
 import wishlistController from "./controllers/wishlist.js";
 import communityController from "./controllers/community.js";
+import path from "path";
 
 const app = express();
 const port = process.env.PORT ? process.env.PORT : "3000";
+const ___dirname = path.resolve();
+
 mongoose.connect(process.env.MONGODB_URI);
 app.use(express.urlencoded({ extended: false}));
 app.use(methodOverride("_method"));
 // app.use(morgan("dev"));
+app.use(express.static(path.join(___dirname, "public")));
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
