@@ -64,4 +64,16 @@ router.put("/:itemId", async (req, res) => {
     }
 })
 
+router.delete("/:itemId", async (req,res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        currentUser.wishlist.id(req.params.itemId).deleteOne();
+        await currentUser.save();
+        res.redirect("/users/"+req.session.user._id+"/wishlist");
+    } catch (error){
+        console.log(error);
+        res.redirect("/");
+    }
+})
+
 export default router;

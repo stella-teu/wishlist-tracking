@@ -11,7 +11,11 @@
 </nav>
 <body>
     <h1><%= item.name %></h1>
-    <a href="/users/<%= user._id %>/wishlist/<%= item._id %>/edit">Edit</a>
+    <button><a href="/users/<%= user._id %>/wishlist/<%= item._id %>/edit">Edit</a>
+    </button>
+    <form action="/users/<%= user._id %>/wishlist/<%= item._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
     <% if (item.price) { %>
     <p>Price: $<%= item.price %></p>
     <% } else { %>
