@@ -11,10 +11,10 @@
     <a href="/auth/sign-out">Sign Out</a>
 </nav>
 <body>
-    <h1><%= user.username %>'s Wishlist</h1>
+    <h1><%= watchedUser.username %>'s Wishlist</h1>
     <ul>
-        <% user.wishlist.forEach(item => { %>
-            <li><%= item.name %></li>
+        <% watchedUser.wishlist.forEach(item => { %>
+            <li><a href="/community/show/<%= watchedUser._id %>/<%= item._id %>"><%= item.name %></a></li>
         <% }); %>
     </ul>
 </body>

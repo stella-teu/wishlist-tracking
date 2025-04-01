@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= item.name %> details</title>
+</head>
+<body>
+    <nav><a href="/">Home</a> 
+        <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
+        <a href="/community">Community</a>
+        <a href="/auth/sign-out">Sign Out</a>
+    </nav>
+    <h1><%= item.name %></h1>
+    <% if (item.price) { %>
+        <p>Price: $<%= item.price %></p>
+        <% } else { %>
+            <p>Price not added.</p>
+            <% } %>
+        <% if (item.description) { %>
+        <p>Description: <%= item.description %></p>
+        <% } else { %>
+            <p>Description not added.</p>
+            <% } %>
+        <% if (item.link) { %>
+        <p><a href="<%= item.link %>">Link</a></p>
+        <% } else { %>
+            <p>Link not added.</p>
+            <% } %>
+    <p><a href="/community/show/<%= watchedUser._id %>">Return to <%= watchedUser.username %>'s Wishlist</a></p>
+</body>
+</html>
