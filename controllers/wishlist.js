@@ -13,7 +13,7 @@ router.get("/", async (req,res) => {
     }
 })
 
-router.get("/new", async (req, res) => {
+router.get("/new", (req, res) => {
     res.render("wishlist/new.ejs");
 })
 
@@ -32,8 +32,19 @@ router.post("/", async (req, res) => {
 router.get("/:itemId", async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
-        const item = await currentUser.wishlist.id(req.params.itemId);
+        const item = currentUser.wishlist.id(req.params.itemId);
         res.render("wishlist/show.ejs", { item: item });
+    } catch (error) {
+        console.log(error);
+        res.redirect("/")
+    }
+})
+
+router.get("/:itemId/edit", async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const item = currentUser.wishlist.id(req.params.itemId);
+        res.render("wishlist/edit.ejs", {item : item})
     } catch (error) {
         console.log(error);
         res.redirect("/")

@@ -11,6 +11,7 @@
 </nav>
 <body>
     <h1><%= item.name %></h1>
+    <a href="/users/<%= user._id %>/wishlist/<%= item._id %>/edit">Edit</a>
     <% if (item.price) { %>
     <p>Price: $<%= item.price %></p>
     <% } else { %>
