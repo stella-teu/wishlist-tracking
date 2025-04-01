@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= item.name %></title>
 </head>
-<nav><a href="/users/<%= user._id %>/wishlist">View Wishlist</a></nav>
+<nav><a href="/">Home</a> 
+    <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
+    <a href="/auth/sign-out">Sign Out</a>
+</nav>
 <body>
     <h1><%= item.name %></h1>
+    <% if (item.price) { %>
     <p>Price: $<%= item.price %></p>
+    <% } else { %>
+        <p>Price not added.</p>
+        <% } %>
+    <% if (item.description) { %>
     <p>Description: <%= item.description %></p>
-    <p>Link: <a href="<%= item.link %>"><%= item.link %></a></p>
+    <% } else { %>
+        <p>Description not added.</p>
+        <% } %>
+    <% if (item.link) { %>
+    <p><a href="<%= item.link %>">Link</a></p>
+    <% } else { %>
+        <p>Link not added.</p>
+        <% } %>
 </body>
 </html>
