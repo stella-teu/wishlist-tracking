@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user.username %>'s Wishlist</title>
+</head>
+<nav><a href="/">Home</a> 
+    <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
+    <a href="/community">Community</a>
+    <a href="/auth/sign-out">Sign Out</a>
+</nav>
+<body>
+    <h1><%= user.username %>'s Wishlist</h1>
+    <ul>
+        <% user.wishlist.forEach(item => { %>
+            <li><%= item.name %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>

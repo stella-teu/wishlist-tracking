@@ -13,4 +13,14 @@ router.get("/", async (req, res) => {
     }
 })
 
+router.get("/show/:userId", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        res.render("community/show.ejs", { user });
+    } catch (error){
+        console.log(error);
+        res.redirect("/");
+    }
+})
+
 export default router;

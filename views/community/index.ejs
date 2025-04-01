@@ -6,10 +6,14 @@
     <title>Community</title>
 </head>
 <body>
+    <nav><a href="/">Home</a> 
+        <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
+        <a href="/auth/sign-out">Sign Out</a>
+    </nav>
     <h1>Community</h1>
     <ul>
         <% users.forEach(user => { %>
-            <li><%= user.username %></li>
+            <li><a href="/community/show/<%= user._id %>"><%= user.username %></a></li>
         <% }); %>
     </ul>
 </body>
