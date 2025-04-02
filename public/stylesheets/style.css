@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap'); 
+
 body {
     background-color: rgb(15, 77, 176);
     color: white;
@@ -5,21 +7,38 @@ body {
 
 .home {
     text-align: center;
-    margin: 270px 0 0 0;
+    margin: 150px 0 0 0;
 }
 
 .home h1{
     font-size: 65px;
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .home button{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 80px 0 0;
     height: 100%;
-    font-size: 40px;
+    font-size: 50px;
     padding : 30px;
-    display:inline-table;
+    display:block;
+    border-radius: 70px;
+    justify-self: center;
+    margin: 10px;
+    width: 5em;
+    border-style: solid;
+    border-color: white;
+    background-color: rgb(163, 212, 255);
+}
+
+.home button:hover{
+    background-color:rgb(91, 170, 239);
+}
+
+.home a{
+    color:rgb(15, 77, 176);
+    font-family: "Dongle", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
 }
