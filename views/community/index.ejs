@@ -7,15 +7,22 @@
     <title>Community</title>
 </head>
 <body class="index">
-    <nav><a href="/">Home</a> 
-        <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
-        <a href="/auth/sign-out">Sign Out</a>
+    <nav>
+        <div>
+        <button class="nav"><a href="/" class="nav">Home</a></button>
+       <button class="nav"><a href="/users/<%= user._id %>/wishlist" class="nav">View Wishlist</a></button>
+    </div>
+    <div>
+        <button class="nav"><a href="/auth/sign-out" class="nav">Sign Out</a></button>
+    </div>
     </nav>
+    <section class="header">
     <h1>Community</h1>
-    <ul>
+</section>
+<main>
         <% users.forEach(user => { %>
-            <li><a href="/community/show/<%= user._id %>"><%= user.username %></a></li>
+            <button id="item"><a href="/community/show/<%= user._id %>"><%= user.username %></a></button>
         <% }); %>
-    </ul>
+</main>
 </body>
 </html>

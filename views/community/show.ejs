@@ -6,17 +6,22 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= user.username %>'s Wishlist</title>
 </head>
-<nav><a href="/">Home</a> 
-    <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
-    <a href="/community">Community</a>
-    <a href="/auth/sign-out">Sign Out</a>
-</nav>
-<body>
+<body class="index">
+    <nav>
+        <div>
+        <button class="nav"><a href="/" class="nav">Home</a></button>
+        <button class="nav"><a href="/users/<%= user._id %>/wishlist" class="nav">View Wishlist</a></button>
+        <button class="nav"><a href="/community" class="nav">Community</a></button>
+    </div>
+        <button class="nav"><a href="/auth/sign-out" class="nav">Sign Out</a></button>
+    </nav>
+    <section class="header">
     <h1><%= watchedUser.username %>'s Wishlist</h1>
-    <ul>
+</section>
+    <main>
         <% watchedUser.wishlist.forEach(item => { %>
-            <li><a href="/community/show/<%= watchedUser._id %>/<%= item._id %>"><%= item.name %></a></li>
+            <button id="item"><a href="/community/show/<%= watchedUser._id %>/<%= item._id %>"><%= item.name %></a></button>
         <% }); %>
-    </ul>
+        </main>
 </body>
 </html>
