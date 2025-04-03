@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Home Page</title>
 </head>
-<body>
-    <div class="home">
+<body class="home">
     <% if (user){ %>
         <h1>Welcome to the Wishlist Tracker, <%= user.username %></h1>
         <button><a href="users/<%= user._id %>/wishlist">View wishlist</a></button>
@@ -21,6 +20,5 @@
     <button><a href="/auth/sign-up">Sign up</a> </button>
     <button id="sign-in"><a href="/auth/sign-in">Sign in</a> </button>
     <% } %>
-</div>
 </body>
 </html>
