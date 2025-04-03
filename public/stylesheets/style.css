@@ -51,7 +51,6 @@ h1{
     font-family: "Dongle", sans-serif;
     font-weight: 300;
     font-style: normal;
-    text-decoration: none;
 }
 
 .auth h1{
@@ -94,3 +93,94 @@ h1{
 .auth button:hover{
     background-color: rgb(91, 170, 239);
 }
+
+.index nav {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+button.nav {
+    font-family: "Dongle", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 30px;
+    border-radius: 70px;
+    padding : 15px 30px;
+    border-style: solid;
+    border-color: white;
+    background-color: rgb(244, 205, 204);
+}
+
+button.nav:hover {
+    background-color: rgb(238, 164, 162);
+}
+
+a.nav {
+    color:rgb(126, 10, 10);
+    text-decoration: none;
+}
+
+section.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header h1{
+    font-size: 125px;
+    margin: 20px 0 0 0;
+}
+
+.header button{
+    font-family: "Dongle", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 40px;
+    height: 80px;
+    width: 150px;
+    margin: 55px 138.41px 0 0;
+    border-radius: 20px;
+    background-color: rgb(101, 171, 232);
+    border-style: solid;
+    border-color: white;
+}
+
+.header button:hover{
+    background-color: rgb(67, 158, 239);
+}
+
+#add-item {
+    color: rgb(15, 77, 176);
+    text-decoration: none;
+}
+
+.index main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin: 0 0 0 250px;
+}
+
+#item {
+    width: 320px;
+    height: 150px;
+    border-radius: 20px;
+    border-color: white;
+    border-style: solid;
+    background-color: rgb(163, 212, 255);
+    font-family: "Dongle", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 60px;
+}
+
+#item:hover {
+    background-color: rgb(67, 158, 239);
+}
+
+main a {
+    color: rgb(15, 77, 176);
+    text-decoration: none;
+}
+

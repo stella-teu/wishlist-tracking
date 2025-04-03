@@ -6,17 +6,24 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Your Wishlist</title>
 </head>
-<body>
-    <nav><a href="/">Home</a> 
-        <a href="/community">Community</a>
-        <a href="/auth/sign-out">Sign Out</a>
+<body class="index">
+    <nav>
+        <div class="user-directions">
+        <button class="nav"><a href="/" class="nav">Home</a></button> 
+        <button class="nav"><a href="/community" class="nav">Community</a></button>
+    </div>
+    <div class="sign-out">
+        <button class="nav"><a href="/auth/sign-out" class="nav">Sign Out</a></button>
+    </div>
     </nav>
+    <section class="header">
     <h1>Your Wishlist</h1>
-    <ul>
+    <button><a href="/users/<%= user._id %>/wishlist/new" id="add-item">Add Item</a></button>
+</section>
+<main>
     <% items.forEach(item => { %>
-        <li><a href="/users/<%= user._id %>/wishlist/<%= item._id %>"><%= item.name %></a></li>
+        <button id="item"><a href="/users/<%= user._id %>/wishlist/<%= item._id %>"><%= item.name %></a></button>
     <% }); %>
-</ul>
-    <a href="/users/<%= user._id %>/wishlist/new">Add Item</a>
+</main>
 </body>
 </html>
