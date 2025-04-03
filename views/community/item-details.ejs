@@ -7,27 +7,44 @@
     <title><%= item.name %> details</title>
 </head>
 <body>
-    <nav><a href="/">Home</a> 
-        <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
-        <a href="/community">Community</a>
-        <a href="/auth/sign-out">Sign Out</a>
+    <nav>
+        <div>
+        <button class="nav"><a href="/" class="nav">Home</a></button>
+        <button class="nav"><a href="/users/<%= user._id %>/wishlist" class="nav">View Wishlist</a></button>
+        <button class="nav"><a href="/community" class="nav">Community</a></button>
+    </div>
+    <div>
+        <button class="nav"><a href="/auth/sign-out" class="nav">Sign Out</a></button>
+    </div>
     </nav>
+    <section class="header">
     <h1><%= item.name %></h1>
+</section>
+<main class="show">
+    <div class="show">
     <% if (item.price) { %>
         <p>Price: $<%= item.price %></p>
         <% } else { %>
             <p>Price not added.</p>
             <% } %>
+        </div>
+        <div class="show">
         <% if (item.description) { %>
         <p>Description: <%= item.description %></p>
         <% } else { %>
             <p>Description not added.</p>
             <% } %>
+        </div>
+        <div class="show">
         <% if (item.link) { %>
-        <p><a href="<%= item.link %>">Link</a></p>
+        <p><a href="<%= item.link %> " id="link">Link</a></p>
         <% } else { %>
             <p>Link not added.</p>
             <% } %>
-    <p><a href="/community/show/<%= watchedUser._id %>">Return to <%= watchedUser.username %>'s Wishlist</a></p>
+        </div>
+        <div class="show">
+    <p><a href="/community/show/<%= watchedUser._id %>" id="link">Return to <%= watchedUser.username %>'s Wishlist</a></p>
+</div>
+</main>
 </body>
 </html>

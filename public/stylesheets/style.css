@@ -94,7 +94,7 @@ h1{
     background-color: rgb(91, 170, 239);
 }
 
-.index nav {
+nav {
     display: flex;
     justify-content: space-between;
 
@@ -149,12 +149,12 @@ section.header {
     background-color: rgb(67, 158, 239);
 }
 
-#add-item {
+.action{
     color: rgb(15, 77, 176);
     text-decoration: none;
 }
 
-.index main{
+main {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -184,3 +184,33 @@ main a {
     text-decoration: none;
 }
 
+#actions {
+    display: flex;
+    flex-direction: row;
+}
+
+#edit {
+    margin: 55px 5px 0 0;
+}
+
+main.show {
+    display: block;
+    font-size: 35px;
+    margin: 0 138.41px 0px 250px;  
+    color:  rgb(15, 77, 176)
+}
+
+div.show {
+    background-color: rgb(163, 212, 255);
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 20px;
+    border-color: white;
+    height: 100px;
+    margin: 0 0 10px 0;
+}
+
+#link {
+    color:rgb(146, 21, 51);
+    text-decoration: underline;
+}

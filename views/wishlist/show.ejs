@@ -6,32 +6,51 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= item.name %></title>
 </head>
-<nav><a href="/">Home</a> 
-    <a href="/users/<%= user._id %>/wishlist">View Wishlist</a> 
-    <a href="/community">Community</a>
-    <a href="/auth/sign-out">Sign Out</a>
-</nav>
 <body>
+    <nav>
+        <div>
+        <button class="nav"><a href="/" class="nav">Home</a></button> 
+        <button class="nav"><a href="/users/<%= user._id %>/wishlist" class="nav">View Wishlist</a></button> 
+        <button class="nav"><a href="/community" class="nav">Community</a></button>
+    </div>
+    <div>
+        <button class="nav"><a href="/auth/sign-out" class="nav">Sign Out</a></button>
+        </div>
+    </nav>
+    <section class="header">
+    <div>
     <h1><%= item.name %></h1>
-    <button><a href="/users/<%= user._id %>/wishlist/<%= item._id %>/edit">Edit</a>
+</div>
+    <div id="actions">
+    <button id="edit"><a href="/users/<%= user._id %>/wishlist/<%= item._id %>/edit" class="action">Edit</a>
     </button>
     <form action="/users/<%= user._id %>/wishlist/<%= item._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
+        <button type="submit" class="action">Delete</button>
     </form>
+</div>
+    </section>
+    <main class="show">
+        <div class="show">
     <% if (item.price) { %>
     <p>Price: $<%= item.price %></p>
     <% } else { %>
         <p>Price not added.</p>
         <% } %>
+    </div>
+    <div class="show">
     <% if (item.description) { %>
     <p>Description: <%= item.description %></p>
     <% } else { %>
         <p>Description not added.</p>
         <% } %>
+    </div>
+    <div class="show">
     <% if (item.link) { %>
-    <p><a href="<%= item.link %>">Link</a></p>
+    <p><a href="<%= item.link %>" id="link">Link</a></p>
     <% } else { %>
         <p>Link not added.</p>
         <% } %>
+    </div>
+    </main>
 </body>
 </html>
