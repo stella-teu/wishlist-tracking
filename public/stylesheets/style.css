@@ -197,7 +197,7 @@ main.show {
     display: block;
     font-size: 35px;
     margin: 0 138.41px 0px 250px;  
-    color:  rgb(15, 77, 176)
+    color:  rgb(15, 77, 176);
 }
 
 div.show {
@@ -213,4 +213,59 @@ div.show {
 #link {
     color:rgb(146, 21, 51);
     text-decoration: underline;
+}
+
+section.form {
+    text-align:center;
+
+}
+
+.form form{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content:space-between ;
+}
+
+.form label{
+    font-size: 40px;
+}
+
+.form input{
+    align-self: flex-start;
+    width: 200px;
+    height: 50px;
+    margin: 0 0 0 615px;
+    text-align: center;
+}
+
+.form textarea {
+    align-self: flex-start;
+    width: 200px;
+    height: 50px;
+    margin: 0 0 0 615px;
+    text-align: center;
+}
+
+.form button{
+    align-self: flex-start;
+    margin: 20px 0 0 650px;
+    font-size: 40px;
+    padding : 5px 20px;
+    font-family: "Dongle", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    border-radius: 70px;
+    border-style: solid;
+    border-color: white;
+    background-color: rgb(163, 212, 255);
+    color: rgb(15, 77, 176);
+}
+
+.form button:hover{
+    background-color: rgb(91, 170, 239);
+}
+
+#submit {
+    margin: 20px 0 0 610px;
 }

@@ -7,11 +7,17 @@
     <title>Edit <%= item.name %></title>
 </head>
 <body>
-    <nav><a href="/">Home</a> 
-        <a href="/users/<%= user._id %>/wishlist">View Wishlist</a>
-        <a href="/community">Community</a> 
-        <a href="/auth/sign-out">Sign Out</a>
+    <nav>
+        <div>
+        <button class="nav"><a href="/" class="nav">Home</a></button>
+        <button class="nav"><a href="/users/<%= user._id %>/wishlist" class="nav">View Wishlist</a></button>
+        <button class="nav"><a href="/community" class="nav">Community</a></button>
+    </div>
+    <div>
+        <button class="nav"><a href="/auth/sign-out" class="nav">Sign Out</a></button>
+    </div>
     </nav>
+    <section class="form">
     <h1>Edit <%= item.name %></h1>
     <form action="/users/<%= user._id %>/wishlist/<%= item._id %>?_method=PUT" method="POST">
         <label for="name">Name: </label>
@@ -22,7 +28,8 @@
         <textarea name="description" id="description"><%= item.description %></textarea>
         <label for="link">Link: </label>
         <input type="link" name="link" id="link" value="<%= item.link %>"/>
-        <button type="submit">Submit Change</button>
+        <button type="submit" id="submit">Submit Change</button>
     </form>
+</section>
 </body>
 </html>
