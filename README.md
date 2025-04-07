@@ -1,7 +1,7 @@
 # The Wishlist Tracker
 The Wishlist Tracker is a tool that helps users keep track of their wishlists while also allowing them to view their friends' wishlists. Users can add, edit, and manage their wishlist items, including details such as price, item link, and additional notes.
 
-You can sign up and start tracking your wishlist [here].
+You can sign up and start tracking your wishlist [here](https://wishlist-tracking-production.up.railway.app/).
 ![User Home Page](./pictures/real-home-page.png)
 
 ## Features
