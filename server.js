@@ -18,7 +18,9 @@ const ___dirname = path.resolve();
 mongoose.connect(process.env.MONGODB_URI);
 app.use(express.urlencoded({ extended: false}));
 app.use(methodOverride("_method"));
+// Don't leave commented out code like this on main branch
 // app.use(morgan("dev"));
+// You can drop your pictures into the public/assets folder instead of having a seperate pictures folder
 app.use(express.static(path.join(___dirname, "public")));
 app.use(
     session({
@@ -40,6 +42,7 @@ app.use(isSignedIn);
 app.use("/users/:userId/wishlist", wishlistController);
 app.use("/community", communityController);
 
+// This can be modularized to its own file
 mongoose.connection.on("connected", () => {
     console.log("Connected to MongoDB");
     app.listen(port, ()=> {
